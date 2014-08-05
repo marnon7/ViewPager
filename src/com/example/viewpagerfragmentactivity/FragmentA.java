@@ -27,7 +27,8 @@ public class FragmentA extends Fragment {
 		TextView tv = (TextView) v.findViewById(R.id.textView1);
 		//add by young 2014-08-05
 		ImageView IV = (ImageView) v.findViewById(R.id.imageView1);
- 
+		// this switch is just for test. I don't support to do such stupid thing. 
+		//		@author: Marnon 2014-08-05
 		switch(pageId)
 		{
 		case 0:
