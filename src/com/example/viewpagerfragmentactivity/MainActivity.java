@@ -31,7 +31,7 @@ public class MainActivity extends FragmentActivity implements
 		List<Fragment> fragments = new Vector<Fragment>();
 		String a = FragmentA.class.getName();
 		Log.d(tag, a);
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 7; i++) {
 			FragmentA aa = new FragmentA();
 			aa.updateView(i);
 			fragments.add(aa);
