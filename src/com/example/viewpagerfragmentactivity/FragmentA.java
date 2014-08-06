@@ -1,5 +1,6 @@
 package com.example.viewpagerfragmentactivity;
 
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -18,47 +19,24 @@ public class FragmentA extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-		
-			Bundle savedInstanceState) {
+
+	Bundle savedInstanceState) {
 		Log.d(tag, "onCreateView");
 		View v = inflater.inflate(R.layout.tab1_fragment, container, false);
 		TextView tv = (TextView) v.findViewById(R.id.textView1);
-		//add by young 2014-08-05
+		// add by young 2014-08-05
 		ImageView IV = (ImageView) v.findViewById(R.id.imageView1);
-		// this switch is just for test. I don't support to do such stupid thing. 
-		//		@author: Marnon 2014-08-05
-		switch(pageId)
-		{
-		case 0:
-			IV.setImageBitmap(BitmapFactory.decodeResource(getResources(),
-					R.drawable.loading_01).copy(Bitmap.Config.ARGB_8888, true));
-			break;
-		case 1:
-			IV.setImageBitmap(BitmapFactory.decodeResource(getResources(),
-					R.drawable.loading_01).copy(Bitmap.Config.ARGB_8888, true));
-			break;
-		case 2:
-			IV.setImageBitmap(BitmapFactory.decodeResource(getResources(),
-					R.drawable.loading_02).copy(Bitmap.Config.ARGB_8888, true));
-			break;
-		case 3:
-			IV.setImageBitmap(BitmapFactory.decodeResource(getResources(),
-					R.drawable.loading_03).copy(Bitmap.Config.ARGB_8888, true));
-			break;
-		case 4:
-			IV.setImageBitmap(BitmapFactory.decodeResource(getResources(),
-					R.drawable.loading_04).copy(Bitmap.Config.ARGB_8888, true));
-			break;
-		case 5:
-			IV.setImageBitmap(BitmapFactory.decodeResource(getResources(),
-					R.drawable.loading_05).copy(Bitmap.Config.ARGB_8888, true));
-			break;
-		case 6:
-			IV.setImageBitmap(BitmapFactory.decodeResource(getResources(),
-					R.drawable.loading_06).copy(Bitmap.Config.ARGB_8888, true));
-			break;
-		}
-
+		
+		// (pageId+1) cause my res is begin with loading_01 but pageId is begin
+		// with 0
+		// @author: Marnon 2014-08-06
+		Resources res = getResources();
+		IV.setImageBitmap(BitmapFactory.decodeResource(
+				getResources(),
+				res.getIdentifier("loading_0" + (pageId + 1), "drawable",
+						"com.example.viewpagerfragmentactivity")).copy(
+				Bitmap.Config.ARGB_8888, true));
+		
 		tv.setText("pageId: " + pageId);
 
 		return v;
