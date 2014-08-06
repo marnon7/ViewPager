@@ -15,12 +15,10 @@ public class FragmentA extends Fragment {
 	private String tag = getClass().getSimpleName();
 	View v;
 	int pageId;
-	
-
-	
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+		
 			Bundle savedInstanceState) {
 		Log.d(tag, "onCreateView");
 		View v = inflater.inflate(R.layout.tab1_fragment, container, false);
@@ -60,7 +58,7 @@ public class FragmentA extends Fragment {
 					R.drawable.loading_06).copy(Bitmap.Config.ARGB_8888, true));
 			break;
 		}
- 
+
 		tv.setText("pageId: " + pageId);
 
 		return v;
