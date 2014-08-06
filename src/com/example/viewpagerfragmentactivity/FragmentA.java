@@ -19,24 +19,22 @@ public class FragmentA extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-
-	Bundle savedInstanceState) {
+			Bundle savedInstanceState) {
 		Log.d(tag, "onCreateView");
 		View v = inflater.inflate(R.layout.tab1_fragment, container, false);
 		TextView tv = (TextView) v.findViewById(R.id.textView1);
 		// add by young 2014-08-05
 		ImageView IV = (ImageView) v.findViewById(R.id.imageView1);
-		
-		// (pageId+1) cause my res is begin with loading_01 but pageId is begin
-		// with 0
+
+		// (pageId+1) cause pic is begin with loading_01 & pageId is beginwith 0
 		// @author: Marnon 2014-08-06
 		Resources res = getResources();
 		IV.setImageBitmap(BitmapFactory.decodeResource(
 				getResources(),
-				res.getIdentifier("loading_0" + (pageId + 1), "drawable",
-						"com.example.viewpagerfragmentactivity")).copy(
-				Bitmap.Config.ARGB_8888, true));
-		
+				res.getIdentifier("loading_0" + (char) (pageId + 1),
+						"drawable", "com.example.viewpagerfragmentactivity"))
+				.copy(Bitmap.Config.ARGB_8888, true));
+
 		tv.setText("pageId: " + pageId);
 
 		return v;
