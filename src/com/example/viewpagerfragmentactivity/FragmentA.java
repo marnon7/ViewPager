@@ -19,7 +19,8 @@ public class FragmentA extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+
+	Bundle savedInstanceState) {
 		Log.d(tag, "onCreateView");
 		View v = inflater.inflate(R.layout.tab1_fragment, container, false);
 		TextView tv = (TextView) v.findViewById(R.id.textView1);
