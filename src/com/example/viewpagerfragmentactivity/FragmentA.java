@@ -31,10 +31,10 @@ public class FragmentA extends Fragment {
 		Resources res = getResources();
 		IV.setImageBitmap(BitmapFactory.decodeResource(
 				getResources(),
-				res.getIdentifier("loading_0" + (char) (pageId + 1),
-						"drawable", "com.example.viewpagerfragmentactivity"))
-				.copy(Bitmap.Config.ARGB_8888, true));
-
+				res.getIdentifier("loading_0" + (pageId + 1), "drawable",
+						"com.example.viewpagerfragmentactivity")).copy(
+				Bitmap.Config.ARGB_8888, true));
+		
 		tv.setText("pageId: " + pageId);
 
 		return v;
